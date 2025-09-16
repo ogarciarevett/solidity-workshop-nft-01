@@ -6,8 +6,8 @@ pnpm hardhat compile
 
 # Run echidna with proper configuration
 echo "Running echidna fuzzing tests..."
-echidna test/fuzz/NFTMarketplaceFuzz.sol \
-  --contract NFTMarketplaceFuzzTest \
+echidna test/fuzz/SeimonFuzzTest.sol \
+  --contract SeimonFuzzTest \
   --config echidna.config.yml \
   --format text \
   --solc-args "--base-path . --include-path node_modules"

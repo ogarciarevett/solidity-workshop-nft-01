@@ -1,6 +1,6 @@
-# EVM Smart Contracts
+# Solidity Workshop
 
-This repository contains a collection of custom smart contracts for the Ethereum Virtual Machine (EVM), primarily focused on security analysis and testing. It includes an NFT Marketplace and various attacker contracts.
+This repository contains a collection of ERC721A nft collection using randomness
 
 ## Project Structure
 
@@ -11,22 +11,9 @@ The project is organized with Hardhat, a development environment for Ethereum so
 - `/test`: Includes tests for the smart contracts.
 - `/scripts`: (Not used in this project, but traditionally for deployment scripts).
 
-## NFTMarketplace.sol
+## SEIMON
 
-The `NFTMarketplace.sol` contract is a simple, fee-based marketplace for buying and selling ERC721 tokens.
-
-### Core Features
-
-- **List NFTs**: Sellers can list their ERC721 tokens for sale at a specific price. They must approve the marketplace contract to manage their NFT first.
-- **Purchase NFTs**: Buyers can purchase a listed NFT by sending the required amount of native currency (e.g., SEI).
-- **Cancel Listings**: Sellers can cancel their listings at any time, as long as the NFT has not been sold.
-- **Marketplace Fees**: A percentage-based fee is taken from each sale and collected by the marketplace.
-- **Role-Based Access Control**: The contract uses OpenZeppelin's `AccessControl` for managing permissions:
-    - `DEFAULT_ADMIN_ROLE`: Can grant and revoke roles.
-    - `FEE_MANAGER_ROLE`: Can update the sales fee percentage.
-    - `PAUSER_ROLE`: Can pause and unpause the contract's core functions (`list`, `purchase`, `cancel`).
-    - `WITHDRAWER_ROLE`: Can withdraw the accumulated marketplace fees.
-- **Security**: Implements `ReentrancyGuard` to prevent re-entrancy attacks on the `purchase` function and is `Pausable` in case of emergencies.
+The `Seimon.sol` contract is a erc72A using generic DNA generation nft with chainlink random oracles (specifically VRF)
 
 ## Available Scripts
 
@@ -42,17 +29,16 @@ This project uses `pnpm` as the package manager. The following scripts are defin
 | `pnpm format`                      | Formats the codebase using Prettier.                                                               |
 | `pnpm format:check`                | Checks for formatting errors without applying changes.                                             |
 | `pnpm coverage`                    | Generates a test coverage report for the smart contracts.                                          |
-| `pnpm deploy:ignition:sei:testnet` | Deploys the `NFTMarketplace` contract to the Sei Testnet using Hardhat Ignition.                   |
-| `pnpm deploy:ignition:sei:mainnet` | Deploys the `NFTMarketplace` contract to the Sei Mainnet using Hardhat Ignition.                   |
+| `pnpm deploy:ignition:sei:testnet` | Deploys the `Seimon` contract to the Sei Testnet using Hardhat Ignition.                   |
+| `pnpm deploy:ignition:sei:mainnet` | Deploys the `Seimon` contract to the Sei Mainnet using Hardhat Ignition.                   |
 
 ## Deployed Contracts (Sei Testnet)
 
 The following contracts have been deployed to the Sei `atlantic-2` testnet.
 
-- **MockNFT**: `0x35fd75dc81971D42AfB581Eb09Fe2699E4Be13E5`
-    - [View on Seitrace](https://seitrace.com/address/0x35fd75dc81971D42AfB581Eb09Fe2699E4Be13E5?chain=atlantic-2)
+- **MockNFT**: `TBD`
+    - [View on Seiscan](TBD2)
 - **NFTMarketplace**: `0xd785252C80DEe5B5D6c13b5047572342998E17d2`
-    - [View on Seitrace](https://seitrace.com/address/0xd785252C80DEe5B5D6c13b5047572342998E17d2?chain=atlantic-2)
 
 To interact with them, you can use the Seitrace block explorer links above, which provide a user interface for reading contract state and executing transactions.
 

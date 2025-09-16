@@ -121,9 +121,13 @@ module.exports = [
         },
     },
     {
-        files: ['*.test.ts', '*.test.tsx'],
+        files: ['**/*.test.ts'],
+        plugins: {
+            mocha: mochaPlugin,
+        },
         rules: {
-            '@typescript-eslint/no-non-null-assertion': 'off',
+            'mocha/no-exclusive-tests': 'error',
+            'mocha/no-pending-tests': 'warn',
         },
     },
 ];

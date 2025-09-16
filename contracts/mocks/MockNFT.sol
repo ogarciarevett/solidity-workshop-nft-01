@@ -12,4 +12,4 @@ contract MockNFT is ERC721 {
         _safeMint(to, _nextTokenId);
         _nextTokenId++;
     }
-} 
+}

@@ -18,8 +18,8 @@ export enum ChainId {
 }
 
 export enum ExplorerApiBaseUrl {
-    Sei = 'https://seitrace.com/pacific-1',
-    SeiTestnet = 'https://seitrace.com/atlantic-2',
+    Sei = 'https://api.seiscan.io',
+    SeiTestnet = 'https://api.testnet.seiscan.io',
 }
 
 export enum NetworkName {
@@ -44,8 +44,8 @@ export enum NetworkExplorer {
     Localhost = 'http://localhost:8545',
     Ethereum = 'https://etherscan.io',
     Sepolia = 'https://sepolia.etherscan.io',
-    Sei = 'https://seistream.app',
-    SeiTestnet = 'https://testnet.seistream.app',
+    Sei = 'https://seiscan.io',
+    SeiTestnet = 'https://testnet.seiscan.io',
     Hardhat = 'https://etherscan.io',
 }
 
