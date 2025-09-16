@@ -38,7 +38,7 @@ The following contracts have been deployed to the Sei `atlantic-2` testnet.
 
 - **MockNFT**: `TBD`
     - [View on Seiscan](TBD2)
-- **NFTMarketplace**: `0xd785252C80DEe5B5D6c13b5047572342998E17d2`
+- **Seimon**: `TBD`
 
 To interact with them, you can use the Seitrace block explorer links above, which provide a user interface for reading contract state and executing transactions.
 
