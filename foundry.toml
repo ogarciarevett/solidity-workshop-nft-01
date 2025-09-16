@@ -5,15 +5,14 @@ libs = ["lib"]           # Where dependencies are installed (forge install)
 optimizer = true         # Enable Solidity optimizer
 optimizer_runs = 30000   # How many times you expect each function to run
 via_ir = true           # Use Yul IR pipeline for better optimizations
+version = "0.8.30"      # solc version
 
 
-
-# forge build --profile intense
-# forge test --profile intense
 [profile.intense]
 optimizer = true
 optimizer_runs = 1000000
 via_ir = true
+version = "0.8.30"
 
 # forge test --fuzz
 [fuzz]

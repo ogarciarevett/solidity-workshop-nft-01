@@ -68,6 +68,8 @@ $ cast --help
 # Extra Omar cmds:
 
 ```shell
+$ forge build --profile intense
+$ forge test --profile intense
 $ forge build --sizes
 $ forge test --gas-report
 $ forge build --via-ir --force
@@ -77,3 +79,10 @@ $ forge build --via-ir --force
 ```shell
 $ forge test --profile production --fuzz-runs 50000
 ```
+
+## 00: setup
+
+1. forge install openzeppelin/openzeppelin-contracts
+2. forge install chainlink/contracts
+3. forge install vectorized/erc721a
+4. forge install transmissions11/solmate
