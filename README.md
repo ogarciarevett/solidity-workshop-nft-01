@@ -64,3 +64,16 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+# Extra Omar cmds:
+
+```shell
+$ forge build --sizes
+$ forge test --gas-report
+$ forge build --via-ir --force
+```
+
+## Prod cmds
+```shell
+$ forge test --profile production --fuzz-runs 50000
+```
