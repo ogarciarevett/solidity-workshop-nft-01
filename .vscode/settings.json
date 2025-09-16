@@ -1,0 +1,11 @@
+{
+    "solidity.compileUsingRemoteVersion": "v0.8.28+commit.7893614a",
+    "solidity.packageDefaultDependenciesDirectory": "lib",
+    "solidity.packageDefaultDependenciesContractsDirectory": "contracts",
+    "solidity.remappings": [
+        "solmate/=lib/solmate/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "forge-std/=lib/forge-std/src/"
+    ]
+}
