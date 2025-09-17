@@ -55,7 +55,7 @@ contract SeiMonsAssemblyTest is Test {
         }
     }
 
-    function testPackingEfficiency() public {
+    function testPackingEfficiency() public view {
         console.log("\n=== PACKING EFFICIENCY COMPARISON ===");
 
         // Test packing with assembly
@@ -117,7 +117,7 @@ contract SeiMonsAssemblyTest is Test {
         console.log("Storage savings: ~75% (1 slot vs 9 slots)");
     }
 
-    function testPowerCalculationComparison() public {
+    function testPowerCalculationComparison() public view {
         console.log("\n=== POWER CALCULATION COMPARISON ===");
 
         uint256 packed = seimons.packMonsterTraits(testMonster);
@@ -166,7 +166,7 @@ contract SeiMonsAssemblyTest is Test {
         assertEq(powerAssembly, powerSolidity, "Results should match");
     }
 
-    function testBatchOperationsComparison() public {
+    function testBatchOperationsComparison() public view {
         console.log("\n=== BATCH OPERATIONS COMPARISON (10 monsters) ===");
 
         // Assembly batch calculation
@@ -208,7 +208,7 @@ contract SeiMonsAssemblyTest is Test {
         }
     }
 
-    function testArraySumComparison() public {
+    function testArraySumComparison() public view {
         console.log("\n=== ARRAY SUM COMPARISON (100 elements) ===");
 
         // Assembly sum
@@ -240,7 +240,7 @@ contract SeiMonsAssemblyTest is Test {
         assertEq(sumAssembly, 5050, "Sum of 1-100 should be 5050");
     }
 
-    function testLargeBatchComparison() public {
+    function testLargeBatchComparison() public view {
         console.log("\n=== LARGE BATCH COMPARISON (50 monsters) ===");
 
         // Create larger test set
@@ -293,7 +293,7 @@ contract SeiMonsAssemblyTest is Test {
         }
     }
 
-    function testMemoryLayoutEfficiency() public view {
+    function testMemoryLayoutEfficiency() public pure {
         console.log("\n=== MEMORY LAYOUT EFFICIENCY ===");
         console.log("Monster struct size: ~288 bytes (9 slots * 32 bytes)");
         console.log("Packed size: 32 bytes (1 slot)");
@@ -308,7 +308,7 @@ contract SeiMonsAssemblyTest is Test {
         console.log("4. Lower calldata costs for external calls");
     }
 
-    function testGasReport() public {
+    function testGasReport() public pure {
         console.log("\n=== COMPREHENSIVE GAS REPORT ===");
         console.log(
             "Run 'forge test --match-path test/SeiMonsAssembly.t.sol --gas-report'"

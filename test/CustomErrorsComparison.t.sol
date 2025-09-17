@@ -70,7 +70,7 @@ contract CustomErrorsComparisonTest is Test {
         console.log("- Better for users who have failed transactions");
     }
 
-    function testDeploymentSizeComparison() public view {
+    function testDeploymentSizeComparison() public pure {
         console.log("\n=== DEPLOYMENT SIZE COMPARISON ===");
         console.log("SeiMonsRandom (with custom errors):");
         console.log("- Deployment Size: ~16,290 bytes");
@@ -83,7 +83,7 @@ contract CustomErrorsComparisonTest is Test {
         console.log("Savings: ~1,200 bytes and ~260,000 gas on deployment");
     }
 
-    function testErrorDataEfficiency() public {
+    function testErrorDataEfficiency() public pure {
         console.log("\n=== ERROR DATA EFFICIENCY ===");
 
         // Custom errors can include useful data
