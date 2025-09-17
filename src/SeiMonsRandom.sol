@@ -5,6 +5,10 @@ import {SeiMons} from "./SeiMons.sol";
 import {ISeiMons} from "./interfaces/ISeiMons.sol";
 import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
 
+// Custom errors for gas efficiency
+error TokenDoesNotExist();
+error InvalidRarity();
+
 contract SeiMonsRandom is SeiMons {
     using Strings for uint256;
 
@@ -118,7 +122,7 @@ contract SeiMonsRandom is SeiMons {
     function getMonster(
         uint256 tokenId
     ) external view returns (ISeiMons.Monster memory) {
-        require(_exists(tokenId), "Token does not exist");
+        if (!_exists(tokenId)) revert TokenDoesNotExist();
         return monsters[tokenId];
     }
 
@@ -130,7 +134,7 @@ contract SeiMonsRandom is SeiMons {
             "Epic",
             "Legendary"
         ];
-        require(rarity < 5, "Invalid rarity");
+        if (rarity >= 5) revert InvalidRarity();
         return rarityNames[rarity];
     }
 

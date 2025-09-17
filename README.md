@@ -91,4 +91,18 @@ $ forge test --profile production --fuzz-runs 50000
 ## 03: Test cmd
 ```shell
 $ forge test --match-path test/GasComparison.t.sol -vv --gas-report
+# Compare power calculations only
+$ forge test --match-test testPowerCalculationComparison -vv
+
+# Compare batch operations only
+$ forge test --match-test testBatchOperationsComparison -vv
+
+# Compare large batch (50 items)
+$ forge test --match-test testLargeBatchComparison -vv
+
+# See storage efficiency
+$ forge test --match-test testStorageEfficiency -vv
+
+# See packing efficiency
+$ forge test --match-test testPackingEfficiency -vv
 ```
