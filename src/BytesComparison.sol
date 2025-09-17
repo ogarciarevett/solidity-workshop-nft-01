@@ -30,10 +30,10 @@ contract BytesComparison {
         bytes32 hash2 = sha256("data");
         
         // Can be used as mapping keys (unlike dynamic bytes/string)
-        mapping(bytes32 => uint256) storage tempMap;
-        assembly {
-            tempMap.slot := 0  // Just to avoid unused variable warning
-        }
+        // bytes32 can be used as mapping keys, but dynamic bytes/strings cannot
+        // mapping(bytes32 => uint256) validMapping;  // Valid
+        // mapping(bytes => uint256) invalidMapping;  // Invalid
+        // mapping(string => uint256) invalidMapping2; // Invalid
         
         // Direct comparison (efficient)
         bool isEqual = (data1 == data2);
@@ -92,7 +92,7 @@ contract BytesComparison {
         
         // Test 1: bytes32 assignment (cheapest)
         gasStart = gasleft();
-        bytes32 fixed = "Test data here";
+        bytes32 fixedData = "Test data here";
         emit GasUsed("bytes32 assignment", gasStart - gasleft());
         
         // Test 2: Dynamic bytes
@@ -140,8 +140,8 @@ contract BytesComparison {
         }
         
         // bytes32 to bytes
-        bytes32 fixed = "Fixed string here";
-        bytes memory dynamicFromFixed = abi.encodePacked(fixed);
+        bytes32 fixedStr = "Fixed string here";
+        bytes memory dynamicFromFixed = abi.encodePacked(fixedStr);
         
         // Address to bytes
         address addr = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
@@ -175,7 +175,7 @@ contract BytesComparison {
         // - Hashes and identifiers
         bytes32 userId = keccak256(abi.encodePacked("user", uint256(1)));
         // - Fixed-size data like Merkle tree nodes
-        bytes32 merkleRoot = 0x123...;  
+        bytes32 merkleRoot = 0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef;  
         // - Efficient storage of short strings (<= 32 bytes)
         bytes32 shortString = "CONSTANT_VALUE";
         
