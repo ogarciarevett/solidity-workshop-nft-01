@@ -106,3 +106,47 @@ $ forge test --match-test testStorageEfficiency -vv
 # See packing efficiency
 $ forge test --match-test testPackingEfficiency -vv
 ```
+
+## 06: Deploy SEI
+
+### Quick Deployment Steps
+
+1. **Setup Environment**
+```shell
+$ cp env.example .env
+# Edit .env with your private key and Seitrace API key
+```
+
+2. **Get Testnet SEI**
+Visit https://faucet.sei.io/ to get testnet tokens
+
+3. **Deploy All Contracts**
+```shell
+$ forge script script/Deploy.s.sol:Deploy \
+  --rpc-url https://evm-rpc-testnet.sei-apis.com \
+  --chain-id 1328 \
+  --broadcast \
+  --verify \
+  --verifier blockscout \
+  --verifier-url https://seitrace.com/atlantic-2/api \
+  -vvvv
+```
+
+4. **Verify Contracts (if automatic verification fails)**
+```shell
+$ forge verify-contract YOUR_CONTRACT_ADDRESS src/SeiMons.sol:SeiMons \
+  --chain-id 1328 \
+  --verifier blockscout \
+  --verifier-url https://seitrace.com/atlantic-2/api \
+  --compiler-version v0.8.28+commit.7893614a \
+  --watch
+```
+
+### Sei Testnet Information
+- **Chain ID**: 1328
+- **RPC URL**: https://evm-rpc-testnet.sei-apis.com
+- **Explorer**: https://seitrace.com/
+- **Faucet**: https://faucet.sei.io/
+
+### Detailed Guide
+See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for complete deployment instructions, troubleshooting, and interaction examples.

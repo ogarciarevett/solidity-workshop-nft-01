@@ -41,3 +41,11 @@ remappings = [
 ]
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+
+# Sei Testnet Configuration
+[rpc_endpoints]
+sei_testnet = "https://evm-rpc-testnet.sei-apis.com"
+
+# Use Seitrace (Blockscout) as the only verification endpoint for Sei Testnet
+[etherscan]
+sei_testnet = { key = "", url = "https://seitrace.com/atlantic-2/api", chain = 1328 }
