@@ -2,8 +2,9 @@
 pragma solidity 0.8.28;
 
 import {ERC721A} from "./ERC721A.sol";
+import {ISeiMons} from "./interfaces/ISeiMons.sol";
 
-contract SimpleSeiMons is ERC721A {
+contract SimpleSeiMons is ERC721A, ISeiMons {
     uint256 public constant PRICE = 0.0001 ether;
     uint256 public constant MAX_SUPPLY = 10000;
 
