@@ -31,6 +31,4 @@ interface ISeiMons {
         string name,
         uint8 rarity
     );
-
-    function mint(uint256 quantity) external payable;
 }

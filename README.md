@@ -86,3 +86,9 @@ $ forge test --profile production --fuzz-runs 50000
 2. forge install chainlink/contracts
 3. forge install vectorized/erc721a
 4. forge install transmissions11/solmate
+
+
+## 03: Test cmd
+```shell
+$ forge test --match-path test/GasComparison.t.sol -vv --gas-report
+```
