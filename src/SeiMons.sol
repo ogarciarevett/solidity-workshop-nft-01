@@ -16,7 +16,7 @@ contract SeiMons is ERC721A, ISeiMons {
 
     constructor() ERC721A("SeiMons", "SMON") {}
 
-    function mint(uint256 quantity) internal {
+    function mint(uint256 quantity) internal virtual {
         _safeMint(msg.sender, quantity);
     }
 
