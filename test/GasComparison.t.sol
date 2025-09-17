@@ -108,7 +108,7 @@ contract GasComparisonTest is Test {
     }
 
     // Test deployment cost difference
-    function testDeploymentCostComparison() public {
+    function testDeploymentCostComparison() public pure {
         console.log("\n=== DEPLOYMENT COST COMPARISON ===");
         console.log("Check the forge gas report above for deployment costs");
         console.log("The contract with custom errors should have:");
