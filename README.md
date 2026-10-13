@@ -1,4 +1,20 @@
-# Solidity Workshop
+<div align="center">
+
+<img src="assets/solidity-workshop-nft-01.svg" width="180" alt="solidity-workshop-nft-01: a collectible card with a DNA helix">
+
+# solidity-workshop-nft-01
+
+**A Solidity NFT workshop scaffold with Hardhat security tests.**
+
+[![license: MIT](https://img.shields.io/badge/license-MIT-22a06b)](LICENSE)
+[![Solidity: 0.8.28](https://img.shields.io/badge/Solidity-0.8.28-5865a8)](contracts/Seimon.sol)
+[![CI: workflow](https://img.shields.io/badge/CI-workflow-287ec1)](.github/workflows/CI.yml)
+
+Works with **Hardhat** · **OpenZeppelin** · **Sei**
+
+</div>
+
+---
 
 This repository contains a collection of ERC721A nft collection using randomness
 
