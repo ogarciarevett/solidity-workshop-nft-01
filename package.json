@@ -30,6 +30,7 @@
     "license": "Apache-2.0",
     "packageManager": "pnpm@10.11.0",
     "devDependencies": {
+        "ethers": "6.17.0",
         "@openzeppelin/hardhat-upgrades": "3.9.1",
         "@typechain/hardhat": "9.1.0",
         "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
