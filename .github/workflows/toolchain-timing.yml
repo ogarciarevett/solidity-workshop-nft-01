@@ -37,13 +37,15 @@ jobs:
               cat "$RUNNER_TEMP/$phase-build.txt" | tee -a "$GITHUB_STEP_SUMMARY"
             else
               cat "$RUNNER_TEMP/$phase-build.txt" | tee -a "$GITHUB_STEP_SUMMARY"
-              failure=1
+              if [ "$phase" = after ]; then failure=1; fi
+              echo "$phase command failed; elapsed time above is a failed-run measurement" | tee -a "$GITHUB_STEP_SUMMARY"
             fi
             if /usr/bin/time -f "$phase typecheck %e seconds" -o "$RUNNER_TEMP/$phase-typecheck.txt" pnpm exec tsc --noEmit; then
               cat "$RUNNER_TEMP/$phase-typecheck.txt" | tee -a "$GITHUB_STEP_SUMMARY"
             else
               cat "$RUNNER_TEMP/$phase-typecheck.txt" | tee -a "$GITHUB_STEP_SUMMARY"
-              failure=1
+              if [ "$phase" = after ]; then failure=1; fi
+              echo "$phase command failed; elapsed time above is a failed-run measurement" | tee -a "$GITHUB_STEP_SUMMARY"
             fi
           done
           exit "$failure"
