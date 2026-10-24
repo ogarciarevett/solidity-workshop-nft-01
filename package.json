@@ -30,6 +30,9 @@
     "license": "Apache-2.0",
     "packageManager": "pnpm@10.11.0",
     "devDependencies": {
+        "ethers": "6.17.0",
+        "@openzeppelin/hardhat-upgrades": "3.9.1",
+        "@typechain/hardhat": "9.1.0",
         "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
         "@nomicfoundation/hardhat-ignition": "^0.15.13",
         "@nomicfoundation/hardhat-ignition-viem": "^0.15.13",
@@ -58,10 +61,12 @@
         "solhint": "^5.2.0",
         "solhint-plugin-prettier": "^0.1.0",
         "solidity-coverage": "^0.8.16",
-        "typescript": "^5.9.2",
+        "typescript": "npm:@typescript/typescript6@6.0.2",
+        "@typescript/native": "npm:typescript@7.0.2",
         "viem": "^2.37.6"
     },
     "dependencies": {
         "@openzeppelin/contracts": "^5.4.0"
-    }
+    },
+    "engines": { "node": "^24.22.1" }
 }
